@@ -25,7 +25,7 @@ namespace Discount.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Coupon>> CreateDiscount(Coupon coupon)
+        public async Task<ActionResult<Coupon>> CreateDiscount([FromBody] Coupon coupon)
         {
             return Ok(await _repository.CreateDiscount(coupon));
         }
@@ -33,7 +33,7 @@ namespace Discount.API.Controllers
         [HttpPut]
         [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
 
-        public async Task<ActionResult<Coupon>> UpdateDiscount(Coupon coupon)
+        public async Task<ActionResult<Coupon>> UpdateDiscount([FromBody] Coupon coupon)
         {
             return Ok(await _repository.UpdateDiscount(coupon));
         }
